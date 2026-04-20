@@ -1,28 +1,97 @@
-time complexity - rate of increase in time with respect to input size
+# ⏱️ Time & Space Complexity Notes
 
-Big-oh notation -> O()
+## 📌 Time Complexity
+**Definition:**  
+Rate of increase in execution time with respect to input size (`n`)
 
-Rules to follow - 
-    1.always calculate time complexity in terms of worst case
-    2.avoid constant values
-    3.avoid lower bound
-    4.do not change input unless asked
+---
 
-cases
-    1.best case
-    2.avearge case - (best+worst)/2
-    3.worst case
+## 🔷 Big-O Notation
+- Represented as: `O()`
+- Describes **upper bound (worst-case scenario)**
 
-case notation
-    1. big O - worst case      - upper bound
-    2. big θ - average case
-    3. big Ω - best case       - lower bound
+---
+
+## ⚙️ Rules to Follow
+1. Always calculate complexity in terms of **worst case**
+2. Ignore constant factors  
+   - Example: `O(2n)` → `O(n)`
+3. Ignore lower-order terms  
+   - Example: `O(n² + n)` → `O(n²)`
+4. Do not change input assumptions unless explicitly asked
+
+---
+
+## 📊 Types of Cases
+
+### 1. Best Case
+- Minimum time taken  
+- Rarely considered in analysis  
+
+### 2. Average Case
+- Typical expected time  
+- ❗ Not simply `(best + worst) / 2`
+
+### 3. Worst Case
+- Maximum time taken  
+- Most important for analysis  
+
+---
+
+## 📐 Asymptotic Notations
+
+| Notation | Meaning      | Case Type   |
+|----------|--------------|------------|
+| O (Big-O) | Upper bound  | Worst case |
+| Θ (Theta) | Tight bound  | Average / Exact |
+| Ω (Omega) | Lower bound  | Best case |
+
+---
+
+## 💾 Space Complexity
+Total memory used by an algorithm
+
+### Formula:
+
+Space Complexity = Auxiliary Space + Input Space
 
 
-Space complexity = auxiliary space + input space
+### 🔹 Auxiliary Space
+- Extra space used by algorithm  
+- Example: variables, recursion stack, temporary arrays  
 
-auxiliary space - extra space used to solve the probelm
+### 🔹 Input Space
+- Memory used to store input data  
 
-input space - space used to store the input
+---
 
-Time Limit Exceeded Error - on coding platform time limit is given as 1 sec (usually) - there are approx 10^8 operations performed in 1 sec on server - if our code exceeds operations this error occures
+## ⚠️ Time Limit Exceeded (TLE)
+
+### ⏳ What it means:
+Your algorithm is too slow for given constraints  
+
+### 🧠 Key Insight:
+- Most platforms allow ~10⁸ operations per second  
+
+---
+
+## 🔢 Approximation Guide
+
+| Complexity | Max Input Size (n) |
+|------------|-------------------|
+| O(1)       | Any               |
+| O(log n)   | 10¹⁸              |
+| O(n)       | 10⁸               |
+| O(n log n) | 10⁷               |
+| O(n²)      | 10⁴               |
+| O(2ⁿ)      | ≤ 20              |
+| O(n!)      | ≤ 10              |
+
+---
+
+## 🚀 Practical Tip
+1. Check constraints (`n`)
+2. Choose algorithm accordingly  
+
+- `n ≤ 10⁴` → O(n²) possible  
+- `n ≤ 10⁵` → aim for O(n log n) or O(n)
